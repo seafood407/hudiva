@@ -168,7 +168,7 @@ class DashboardUserDiverController extends Controller
      */
     public function update(Request $request, user $user)
     {
-
+ 
        $validatedData = $request->validate([
             'nama' => 'required',
             'jenis_kelamin' => 'required',

@@ -124,7 +124,7 @@
 
         var baseLayers = [
             {
-                active: true,
+                active: false,
                 name: "  OpenStreetMap",
                 layer: Layerkita
             }
@@ -134,6 +134,7 @@
             {
                 group: "Kota Gorontal",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -149,15 +150,16 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_kota.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             },
             {
                 group: "Kabupaten Bone Bolango",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -174,15 +176,16 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_bonbol.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             },
             {
                 group: "Kabupaten Gorontalo",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -198,15 +201,16 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_kabgor.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             },
             {
                 group: "Kabupaten Boalemo",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -222,15 +226,16 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_boalemo.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             },
             {
                 group: "Kabupaten Pohuato",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -246,15 +251,16 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_pohuato.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             },
             {
                 group: "Kabupaten Gorontalo Utara",
                 collapsed: true,
+                active: false,
                 layers: [
                     {
                         active: false,
@@ -270,9 +276,9 @@
                     },
                     {
                         active: false,
-                        name: "Garis Pantai",
+                        name: "Jalan",
                         icon: iconByName('bar'),
-                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/garispantai_kota.geojson') }}"],{onEachFeature:popUp,style: garispantai,pointToLayer: featureToMarker }).addTo(map)
+                        layer: new L.GeoJSON.AJAX(["{{ asset('geojson/jalan_gorut.geojson') }}"],{onEachFeature:popUp,style: jalan,pointToLayer: featureToMarker }).addTo(map)
                     }
                 ]
             }
@@ -283,7 +289,8 @@
             compact: true,
             collapsed: true,
             selectorGroup: true,
-            collapsibleGroups: true
+            collapsibleGroups: true,
+            active: false
         });
 
         map.addControl(panelLayers);

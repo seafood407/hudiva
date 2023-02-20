@@ -56,7 +56,7 @@ class LandingController extends Controller
         $ulasan = Ulasan::all()->where('lokasi_id', $id);
         $galeri = Galeri::where('lokasi_id', $id)->get();
         
-        
+         
         
         return view('landing.detail', [
             "title" => "detail lokasi",

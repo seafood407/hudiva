@@ -99,7 +99,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                
+                                                 
                                             </tr>
                                         </tbody>
                                     </table>
@@ -213,7 +213,7 @@
                 </div> --}}
                         <div class="carousel-item {{ $galeri->first()->id == $g['id'] ? 'active' : ' ' }}">
                             {{-- <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving2.jpg') }}"> --}}
-                            <img class="d-block w-100" src="{{ asset('./images/'.$g['foto']) }}">
+                            <img class="d-block w-100" src="{{ asset('./images/divesite/'.$g['foto']) }}">
                         </div>
                     @endforeach
                   {{-- <div class="carousel-item active">

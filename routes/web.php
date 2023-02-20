@@ -9,6 +9,8 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardLokasiController;
 use App\Http\Controllers\DashboardUserAdminController;
 use App\Http\Controllers\DashboardUserDiverController;
+use App\Http\Controllers\VerifikasiLokasiController;
+use App\Http\Controllers\VerifikasiPenyelamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +53,6 @@ Route::resource('/dashboard/daftar-lokasi', DashboardLokasiController::class)->m
 Route::resource('/dashboard/users', DashboardUserDiverController::class)->middleware('admin');
 
 Route::resource('/dashboard/admins', DashboardUserAdminController::class)->middleware('admin');
+
+Route::resource('/dashboard/verifikasi-penyelam', VerifikasiPenyelamController::class);
+Route::resource('/dashboard/verifikasi-lokasi', VerifikasiLokasiController::class);

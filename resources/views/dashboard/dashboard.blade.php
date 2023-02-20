@@ -44,7 +44,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>3</h3>
+                <h3>{{ count($penyelam) }}</h3>
 
                 <p>Data Penyelam</p>
               </div>
@@ -58,7 +58,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{ count($galeri) }}</h3>
 
                 <p>Data Galeri</p>
               </div>

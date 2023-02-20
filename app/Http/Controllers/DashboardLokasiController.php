@@ -95,12 +95,14 @@ class DashboardLokasiController extends Controller
             $login = Auth::user()->penyelam->first();
         }
         $lokasi = Lokasi::where('id', $daftar_lokasi->id)->first();
+        $galeri = Galeri::where('lokasi_id', $daftar_lokasi)->get();
         
         return view('dashboard.lokasi.show',[
             "title" => "Detail Lokasi",
             "nama" => $login->nama,
             "page" => "Halaman Detail",
-            "data" => $lokasi
+            "data" => $lokasi,
+            "galeri" => $galeri
         ]);
     }
 
@@ -116,7 +118,7 @@ class DashboardLokasiController extends Controller
     public function fileStore(Request $request, Lokasi $lokasi) { 
         $image = $request->file('file');
         $imageName = $image->getClientOriginalName();
-        $image->move(public_path('images'),$imageName);
+        $image->move(public_path('images/divesite'),$imageName);
         $imageUpload = new Galeri();
         $imageUpload->lokasi_id =  $lokasi->id;
         $imageUpload->nama_foto = $lokasi->nama_lokasi.' '.Galeri::where('lokasi_id', $lokasi->id)->count() + 1;

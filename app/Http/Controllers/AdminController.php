@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeri;
 use App\Models\User;
 use App\Models\Lokasi;
+use App\Models\Penyelam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
  
@@ -27,8 +29,9 @@ class AdminController extends Controller
             "nama" => $login->nama,
             "page" => "Dashboard",
             "lokasi" => Lokasi::all(),
-            "user" => User::all()
-            
+            "user" => User::all(),
+            "galeri" => Galeri::all(),
+            "penyelam" => User::all()->where('role', 'Penyelam')            
         ]);
     }
 
