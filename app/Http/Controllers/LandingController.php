@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Galeri;
 use App\Models\Lokasi;
 use App\Models\Ulasan;
 use Illuminate\Http\Request;
@@ -52,17 +54,15 @@ class LandingController extends Controller
     {
         $data = Lokasi::all();
         $ulasan = Ulasan::all()->where('lokasi_id', $id);
-        $jum_ulasan = count($ulasan);
+        $galeri = Galeri::where('lokasi_id', $id)->get();
         
-        
-        // dd($sum_rating);
-        // $avg = $sum_rating/$jum_ulasan;
         
         
         return view('landing.detail', [
             "title" => "detail lokasi",
             "data" => $data->firstWhere('id', $id),
-            "ulasan" => $ulasan
+            "ulasan" => $ulasan,
+            "galeri" => $galeri
         ]);
     }
 

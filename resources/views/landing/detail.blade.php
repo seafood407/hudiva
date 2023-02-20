@@ -30,7 +30,7 @@
                                                 <td>
                                                     Dive Site
                                                 </td>
-                                                <td>:</td>
+                                              <td>:</td>
                                                 <td>
                                                     {{ $data->nama_lokasi }}
                                                 </td>
@@ -194,59 +194,29 @@
 @endsection
 
 @section('galeri_modal')
-    <!-- Galery Modal -->
-    <div class="portfolio-modal modal fade" id="gallerymodal" tabindex="-1" aria-labelledby="gallerymodal" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving1.jpg') }}" alt="First slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving2.jpg') }}" alt="Second slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving3.jpg') }}" alt="Third slide">
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>  
-                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                        <i class="fas fa-xmark fa-fw"></i>
-                        Close Window
-                    </button>
-
-            </div>
-        </div>
-    </div>
-
-    {{-- 
-     --}}
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
+                <span aria-hidden="true">x</span>
               </button>
             </div>
             <div class="modal-body">
-              
+              {{-- {{ $galeri->first()->id }} --}}
             <!-- Carousel markup: https://getbootstrap.com/docs/4.4/components/carousel/ -->
             <div id="carouselExample" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving1.jpg') }}">
-                  </div>
-                  <div class="carousel-item">
+                    @foreach ($galeri as $g)
+                  {{-- <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ asset('./images/'.$g['foto']) }}">
+                </div> --}}
+                        <div class="carousel-item {{ $galeri->first()->id == $g['id'] ? 'active' : ' ' }}">
+                            {{-- <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving2.jpg') }}"> --}}
+                            <img class="d-block w-100" src="{{ asset('./images/'.$g['foto']) }}">
+                        </div>
+                    @endforeach
+                  {{-- <div class="carousel-item active">
                     <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving2.jpg') }}">
                   </div>
                   <div class="carousel-item">
@@ -254,7 +224,7 @@
                   </div>
                   <div class="carousel-item">
                     <img class="d-block w-100" src="{{ asset('assets/img/portfolio/diving4.jpg') }}">
-                  </div>
+                  </div> --}}
                 </div>
                 <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

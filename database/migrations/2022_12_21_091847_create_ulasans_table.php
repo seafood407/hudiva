@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('ulasans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lokasi_id');
-            $table->foreign('lokasi_id')->references('id')->on('lokasis');
+            $table->foreignId('lokasi_id')->constrained('lokasis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama');
             $table->string('email')->unique();
             $table->text('ulasan');

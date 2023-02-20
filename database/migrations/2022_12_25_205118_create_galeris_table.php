@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('galeris', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lokasi_id');
-            $table->foreign('lokasi_id')->references('id')->on('lokasis');
+            $table->foreignId('lokasi_id')->constrained('lokasis')->onUpdate('cascade')->onDelete('cascade'); 
             $table->string('nama_foto');
             $table->text('foto');
             $table->timestamps();
