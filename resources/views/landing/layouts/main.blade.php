@@ -86,7 +86,7 @@
         <!-- Core theme JS-->
         <script src="{{ asset('js/scripts.js') }}"></script>
         <script src="{{ asset('js/leaflet.ajax.js') }}"></script>
-
+ 
     </body>
     @yield('leaflet')
     @yield('detailjs')
