@@ -95,7 +95,7 @@ class DashboardLokasiController extends Controller
             $login = Auth::user()->penyelam->first();
         }
         $lokasi = Lokasi::where('id', $daftar_lokasi->id)->first();
-        $galeri = Galeri::where('lokasi_id', $daftar_lokasi)->get();
+        $galeri = Galeri::where('lokasi_id', $daftar_lokasi->id)->get();
         
         return view('dashboard.lokasi.show',[
             "title" => "Detail Lokasi",

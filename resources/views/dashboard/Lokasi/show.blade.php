@@ -102,7 +102,7 @@
                     </button>
                 </div>
             </div>
-            <a href="/dashboard/daftar-lokasi" class="btn btn-block btn-secondary btn-sm mt-3">
+            <a href="/dashboard/verifikasi-lokasi" class="btn btn-block btn-secondary btn-sm mt-3">
                 Kembali
             </a>
         </div>
