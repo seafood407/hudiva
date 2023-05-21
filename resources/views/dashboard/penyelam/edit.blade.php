@@ -50,7 +50,7 @@
                         </div>
                         @enderror
                         </div>
-                    </div>
+                    </div> 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Alamat</label>
                         <div class="col-sm-10">

@@ -13,7 +13,7 @@
               <h3 class="card-title">
                 <i class="fas fa-user-plus mr-1 pt-2"></i>
                 Tambah Data Penyelam
-              </h3>
+              </h3> 
               <a href="/dashboard/users" class="btn btn-secondary float-right"><i class="fa-solid fa-arrow-left"></i></a>
             </div><!-- /.card-header -->
             <div class="card-body">
